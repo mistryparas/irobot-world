@@ -37,7 +37,14 @@ pipeline
           sh ''' docker build -t irobot-docker-demo:2.\${BUILD_NUMBER} .'''
         }
       }
-    
+      stage ("Push Images") {
+        steps {
+          sh ''' docker login
+          docker tag irobot-docker-demo:2.\${BUILD_NUMBER} mistryparas/devops-demo:v4.\${BUILD_NUMBER}
+          docker push mistryparas/devops-demo:v4.\${BUILD_NUMBER} 
+          docker rmi mistryparas/devops-demo:v4.\${BUILD_NUMBER} irobot-docker-demo:2.\${BUILD_NUMBER}'''
+        }
+      }
     }
 
 }
