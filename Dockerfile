@@ -1,4 +1,4 @@
-FROM openjdk:17-alpine
+FROM openjdk
 ADD ./pkg/irobot-project.jar /irobot-project.jar
 ADD ./run.sh /run.sh
 RUN chmod a+x /run.sh
