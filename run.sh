@@ -1,1 +1,1 @@
-java -jar /iroboto-project.jar
+java -jar /irobot-project.jar
