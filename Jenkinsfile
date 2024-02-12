@@ -24,13 +24,6 @@ pipeline
                 sh  '''docker build . -t nginx:1.0.${BUILD_NUMBER} '''
             }
         }
-        stage ("Push Images") {
-            steps {
-                sh ''' docker login
-                docker tag nginx:1.0.\${BUILD_NUMBER} mistryparas/devops-demo:v1.0.\${BUILD_NUMBER}
-                docker push mistryparas/devops-demo:v1.0.\${BUILD_NUMBER} 
-                docker rmi mistryparas/devops-demo:v1.0.\${BUILD_NUMBER} nginx:1.0.\${BUILD_NUMBER}'''
-        }
-      }
+      
     }
 }
