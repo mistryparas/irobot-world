@@ -16,7 +16,7 @@ pipeline
         stage("update the nginx Version") {
             steps {
                sh  '''
-               sed -i "s/MYVERSION/1.0.${BUILD_NUMBER}" index.html'''
+               sed -i "s/MYVERSION/1.0.${BUILD_NUMBER}/g" index.html'''
             }
         }
         stage("Build") {
