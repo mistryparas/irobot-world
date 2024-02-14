@@ -1,0 +1,21 @@
+# Default values for irobot-demo.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+namespace: default
+
+deployment:
+  replicas: 3
+  image: mistryparas/devops-demo
+  version: v1.0.10
+  app_name: irobot-auto
+  imagePullPolicy: Always
+  containerPort: 80
+  protocol: TCP
+
+service:
+  name: svc-auto
+  port: 80
+  nodePort: 30050
+  protocol: TCP
+  selector_app: irobot-auto
+  service_type: NodePort
