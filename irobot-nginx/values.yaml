@@ -1,0 +1,21 @@
+# Default values for irobot-demo.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+namespace: default
+
+deployment:
+  replicas: 5
+  image: mistryparas/devops-demo
+  version: v1.0.10
+  app_name: irobot-nginx
+  imagePullPolicy: Always
+  containerPort: 80
+  protocol: TCP
+
+service:
+  name: inginx-svc
+  port: 80
+  nodePort: 30050
+  protocol: TCP
+  selector_app: irobot-nginx
+  service_type: NodePort
