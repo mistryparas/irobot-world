@@ -15,7 +15,7 @@ deployment:
 service:
   name: svc-auto
   port: 80
-  nodePort: 30050
+  nodePort: 30060
   protocol: TCP
   selector_app: irobot-auto
   service_type: NodePort
